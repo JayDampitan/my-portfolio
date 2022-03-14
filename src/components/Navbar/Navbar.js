@@ -1,11 +1,82 @@
-import React from 'react';
-import { NavContainer } from './navbarStyles';
+import React from "react";
+import { Link } from "react-router-dom";
 
+import { 
+    NavContainer, 
+    LogoContainer, 
+    Logo1, 
+    Logo2,
+    LinksContainer,
+    NavLinks,
+} from "./navbarStyles";
+import { 
+    logo1Variants,
+    logo2Variants,
+    linkVariants
+} from "./navVariants";
+
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   return (
-    <NavContainer/>
-  )
-}
+    <NavContainer>
+      {/*-----Logo */}
+      <LogoContainer>
+        <Logo1
+          as={motion.div}
+          variants={logo1Variants}
+          initial="hidden"
+          animate="visible"
+        >
+          J
+        </Logo1>
+        <Logo2
+          as={motion.div}
+          variants={logo2Variants}
+          initial="hidden"
+          animate="visible"
+        >
+          D
+        </Logo2>
+      </LogoContainer>
 
-export default Navbar
+      {/*-----Links */}
+        <LinksContainer
+            as = {motion.div}
+            variants = {linkVariants}
+            initial = 'hidden'
+            animate = 'visible'
+        >
+            <NavLinks to='/'
+                as = {motion(Link)}
+                variants = {linkVariants}
+                whileHover = "hover"
+            >Home</NavLinks>
+            <NavLinks to='/about'
+                as = {motion(Link)}
+                variants = {linkVariants}
+                whileHover = "hover"
+            >About</NavLinks>
+            <NavLinks to='/'
+                as = {motion(Link)}
+                variants = {linkVariants}
+                whileHover = "hover"
+            >Work</NavLinks>
+            <NavLinks to='/'
+                as = {motion(Link)}
+                variants = {linkVariants}
+                whileHover = "hover"
+            >Experience</NavLinks>
+            <NavLinks to='/'
+                as = {motion(Link)}
+                variants = {linkVariants}
+                whileHover = "hover"
+            >Contact</NavLinks>
+        </LinksContainer>
+
+
+    </NavContainer>
+  );
+};
+
+export default Navbar;
