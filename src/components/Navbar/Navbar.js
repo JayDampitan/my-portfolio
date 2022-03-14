@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import { 
     NavContainer, 
@@ -48,27 +47,27 @@ const Navbar = () => {
             animate = 'visible'
         >
             <NavLinks to='/'
-                as = {motion(Link)}
+                as = {motion.div}
                 variants = {linkVariants}
                 whileHover = "hover"
             >Home</NavLinks>
             <NavLinks to='/about'
-                as = {motion(Link)}
+                as = {motion.div}
                 variants = {linkVariants}
                 whileHover = "hover"
             >About</NavLinks>
             <NavLinks to='/'
-                as = {motion(Link)}
+                as = {motion.div}
                 variants = {linkVariants}
                 whileHover = "hover"
             >Work</NavLinks>
             <NavLinks to='/'
-                as = {motion(Link)}
+                as = {motion.div}
                 variants = {linkVariants}
                 whileHover = "hover"
             >Experience</NavLinks>
             <NavLinks to='/'
-                as = {motion(Link)}
+                as = {motion.div}
                 variants = {linkVariants}
                 whileHover = "hover"
             >Contact</NavLinks>
