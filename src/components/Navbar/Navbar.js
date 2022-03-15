@@ -8,19 +8,64 @@ import {
     LinksContainer,
     NavLinks,
 } from "./navbarStyles";
-import { 
-    logo1Variants,
-    logo2Variants,
-    linkVariants
-} from "./navVariants";
 
 import { motion } from "framer-motion";
 
-const Navbar = () => {
+const Navbar = ({switchActive, setSwitchActive}) => {
+  // -----Logo animations
+const logo1Variants = {
+  hidden: {
+      x: -200
+  },
+  visible: {
+      x: 0,
+      textShadow: '0px 0px 5px rgb(255, 255, 255)',
+      transition: {
+          stiffness: 50,
+          duration: 1
+      }
+  }
+};
+
+const logo2Variants = {
+  hidden: {
+      y: -150
+  },
+  visible: {
+      y: 0,
+      textShadow: '0px 0px 5px rgb(255, 255, 255)',
+      transition: {
+          stiffness: 50,
+          duration: 1
+      }
+  }
+};
+
+// -----Links Animation
+
+
+const linkVariants = {
+  hidden: {
+      opacity: 0  
+  },
+  visible: {
+      opacity: 1,
+      transition: {
+          duration: 2,      
+      }
+  },
+  hover: {
+      scale: 1.2,
+      textShadow: '0px 0px 8px rgb(255, 255, 255)',
+  }
+}
+
   return (
     <NavContainer>
       {/*-----Logo */}
-      <LogoContainer>
+      <LogoContainer 
+      onClick={() => setSwitchActive(!switchActive)}
+      >
         <Logo1
           as={motion.div}
           variants={logo1Variants}

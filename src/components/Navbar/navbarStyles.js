@@ -15,6 +15,8 @@ export const NavContainer = styled.div`
 export const LogoContainer = styled.div`
   display: flex;
   margin-left: 100px;
+  cursor: pointer;
+  user-select: none;
 `;
 
 export const Logo1 = styled.h2`
@@ -39,6 +41,7 @@ export const LinksContainer = styled.div`
   display: flex;
   align-items: center;
   margin-right: 40px;
+  overflow: hidden;
 `;
 
 export const NavLinks = styled.div`
@@ -49,4 +52,5 @@ export const NavLinks = styled.div`
   padding: 0 25px;
   display: flex;
   flex-direction: column;
+  user-select: none;
 `;

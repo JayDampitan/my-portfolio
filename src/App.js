@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import GlobalStyle from "./globalStyle.js";
 
 import { ThemeProvider } from "styled-components";
@@ -9,11 +9,13 @@ import Navbar from "./components/Navbar/Navbar.js";
 import About from "./components/About/About.js";
 
 function App() {
+  const [switchActive, setSwitchActive] = useState(true);
+
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={darkMode}>
-        <Navbar />
+      <ThemeProvider theme={switchActive ? darkMode : lightMode}>
+        <Navbar switchActive={switchActive} setSwitchActive={setSwitchActive}/>
         <Main />
         <About />
       </ThemeProvider>
