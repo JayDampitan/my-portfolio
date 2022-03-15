@@ -8,7 +8,8 @@ export const MainContainer = styled.div`
   align-items: center;
   justify-content: center;
   background: ${(props) => props.theme.body};
-  flex-direction: column ;
+  flex-direction: column;
+  user-select: none;
 `;
 
 export const NameHeader = styled.h2`
@@ -42,4 +43,5 @@ export const IconContainer = styled.div`
   border: 2px solid ${props => props.theme.text};
   padding: 5px;
   cursor: pointer;
+  fill: ${props => props.theme.body};
 `;
